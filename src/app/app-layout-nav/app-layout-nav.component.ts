@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LayoutScreenService } from '../layout-screen.service';
+
 
 @Component({
   selector: 'app-layout-nav',
@@ -33,9 +35,9 @@ export class AppLayoutNavComponent implements OnInit {
     },
   ];
 
-  constructor() { }
-
-  
+  constructor(public layoutScreen : LayoutScreenService) {
+    layoutScreen.screenResizing();
+  }
 
   ngOnInit() {
   }
